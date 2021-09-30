@@ -19,7 +19,7 @@ Returneaza produsul numerelor din lista lst.
 '''
 def get_product(lst):
   p=1
-  for i in lst:
+  for i in range(1,lst+1):
     p=p*i
   return p
 
@@ -54,36 +54,40 @@ def get_cmmdc_v2(x, y):
   
   
 def main():
+  while True:
+    print("1. Determinati daca numarul este prim")
+    print("2. Calculeaza produsul a n numere")
+    print("3. Determina cel mai mare divizor comun prin prima metoda")
+    print("4. Determina cel mai mare divizor comun prin a doua metoda")
+    print("x. Iesire")
 
-while True:
-  print("1. Determinati daca numarul este prim")
-  print("2. Calculeaza produsul a n numere")
-  print("3. Determina cel mai mare divizor comun prin prima metoda")
-  print("4. Determina cel mai mare divizor comun prin a doua metoda")
-  print("x. Iesire")
+    optiune= input("Dati o optiune: ")
 
-  optiune= input("Dati o optiune: ")
+    if optiune == "1":
+      n=int(input("Dati numar: "))
+      print(is_prime(n))
 
-  if optiune == "1":
-    n=int(input("Dati numar: "))
-    print(is_prime(n))
-  elif optiune == "2":
-    lst=int(input("Dati numarul de numere: "))
-    for i in lst:
-      n=int(input("Dati numere: "))
-    print(get_product(lst))
-  elif optiune=="3":
-    x=int(input("Dati primul numar: "))
-    y=int(input("Dati al doilea numar"))
-    print(get_cmmdc_v1(x,y))
-  elif optiune=="4":
-    x = int(input("Dati primul numar: "))
-    y = int(input("Dati al doilea numar"))
-    print(get_cmmdc_v2(x, y))
-  elif optiune=="x":
-    break
-  else:
-    print("Optiune gresita! Reincearca")
+    elif optiune == "2":
+      lst=int(input("Dati numarul de numere: "))
+      for i in range(1,lst+1):
+        i=int(input("Dati numere: "))
+      print(get_product(lst))
+
+    elif optiune=="3":
+      x=int(input("Dati primul numar: "))
+      y=int(input("Dati al doilea numar"))
+      print(get_cmmdc_v1(x,y))
+
+    elif optiune=="4":
+      x = int(input("Dati primul numar: "))
+      y = int(input("Dati al doilea numar"))
+      print(get_cmmdc_v2(x, y))
+
+    elif optiune=="x":
+      break
+
+    else:
+      print("Optiune gresita! Reincearca")
 
 
 if __name__ == '__main__':
