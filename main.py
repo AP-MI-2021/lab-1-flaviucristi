@@ -54,6 +54,7 @@ def get_cmmdc_v2(x, y):
   
   
 def main():
+
 while True:
   print("1. Determinati daca numarul este prim")
   print("2. Calculeaza produsul a n numere")
@@ -64,9 +65,25 @@ while True:
   optiune= input("Dati o optiune: ")
 
   if optiune == "1":
-    n=int(input("Dati numar"))
+    n=int(input("Dati numar: "))
     print(is_prime(n))
   elif optiune == "2":
+    lst=int(input("Dati numarul de numere: "))
+    for i in lst:
+      n=int(input("Dati numere: "))
+    print(get_product(lst))
+  elif optiune=="3":
+    x=int(input("Dati primul numar: "))
+    y=int(input("Dati al doilea numar"))
+    print(get_cmmdc_v1(x,y))
+  elif optiune=="4":
+    x = int(input("Dati primul numar: "))
+    y = int(input("Dati al doilea numar"))
+    print(get_cmmdc_v2(x, y))
+  elif optiune=="x":
+    break
+  else:
+    print("Optiune gresita! Reincearca")
 
 
 if __name__ == '__main__':
