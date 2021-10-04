@@ -19,7 +19,7 @@ Returneaza produsul numerelor din lista lst.
 '''
 def get_product(lst):
   p=1
-  for i in range(1,lst+1):
+  for i in lst:
     p=p*i
   return p
 
@@ -68,9 +68,10 @@ def main():
       print(is_prime(n))
 
     elif optiune == "2":
-      lst=int(input("Dati numarul de numere: "))
-      for i in range(1,lst+1):
-        i=int(input("Dati numere: "))
+      lst=[]
+      n=int(input("Dati numarul de numere: "))
+      for i in range(1,n+1):
+        lst.append(int(input("Dati numere: ")))
       print(get_product(lst))
 
     elif optiune=="3":
